@@ -17,14 +17,13 @@ a:hover{
 }
 table {
     border-collapse: collapse;
-    
+    margin:auto;
   }
   
-   table, th, td {
+   table,  td {
     border: 1px solid black;
-    
-  }
- 
-  td {
     padding: 8px;
   }
+ 
+  
+  tr:nth-child(odd) {background-color: #f2f2f2;}
