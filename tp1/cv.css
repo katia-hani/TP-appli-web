@@ -1,10 +1,11 @@
 h1.titlecv{
-    padding-left: 200px;
-    font-size: 50px;
+    text-align: center;
+    font-size: 50px ;
+    color: royalblue;
 }
 
 body{
-    background-color:grey ;
+    background-color: white ;
 }
 
 table{
@@ -14,3 +15,16 @@ a:hover{
     color: orange;
     text-decoration: none;
 }
+table {
+    border-collapse: collapse;
+    
+  }
+  
+   table, th, td {
+    border: 1px solid black;
+    
+  }
+ 
+  td {
+    padding: 8px;
+  }
