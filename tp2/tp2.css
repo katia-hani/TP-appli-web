@@ -55,6 +55,7 @@ label{
   color: #fff;
   margin-top: 10px;
   display : none;
+  display: none;
 }
 
 #error{
@@ -62,9 +63,12 @@ label{
   border: 1px solid black;
   padding: 5px;
   margin-top: 10px;
-  display : none;
+  display: none;
 }
 
-.display{
+*.display{
   display : block !important;
+}
+.display{
+  display: inline;
 }
