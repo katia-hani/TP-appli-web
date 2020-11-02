@@ -8,7 +8,7 @@ function validation() {
     document.getElementById("nationality").value;
     document.getElementById("Valider").value;
     document.getElementById("error").value;  
-     document.getElementById("resultat").value;
+    document.getElementById("resultat").value;
    
 
 
@@ -22,24 +22,29 @@ function validation() {
    
 
     if(lastName.value.length<5  ){
-        
+        document.getElementById("error").classList.add("display");
         document.getElementById("error").innerHTML="veuillez saisir votre Nom";
+        
      
     }
      
      else if(FirstName.value.length<5   ){
+        document.getElementById("error").classList.add("display");
             document.getElementById("error").innerHTML="veuillez saisir votre Prenom";
             }
            
     else if(!courriel.value ){
+        document.getElementById("error").classList.add("display");
                 document.getElementById("error").innerHTML="veuillez saisir votre Mail";
                 }
                   
       else if(!dateBirth.value ){
+        document.getElementById("error").classList.add("display");
                     document.getElementById("error").innerHTML="veuillez saisir votre Date de naissance";
                     }
                     
      else if(address.value.length<5 ){
+        document.getElementById("error").classList.add("display");
                         document.getElementById("error").innerHTML="veuillez saisir votre Adresse";
                         }
                         
@@ -52,12 +57,12 @@ function validation() {
                        }
                        else{
                         
-                             
+                        document.getElementById("resultat").classList.add("display");                   
                            
        document.getElementById("resultat").innerHTML="Bienvenue " + document.querySelector("#FirstName").value;
                        }
 
-
+                       
 
 
    /* var inputAw=document.getElementsByTagName("inputAW");
