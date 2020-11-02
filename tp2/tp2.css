@@ -1,6 +1,6 @@
 form {
     /* centrer le formulaire sur la page */
-    margin: 0 auto;
+  margin: 0 auto;
   width: 800px;
     /* Encadré et faire une marge */
     padding: 3em;
@@ -36,15 +36,13 @@ body{
   width: 175px;
 }
 
-/*option{
-  width: 190px;
-}*/
 
 label{
   /*  les étiquettes ont même taille et sont correctement alignées */
   display: inline-block;
   width: 180px;
   text-align: right;
+  
 }
  
   h1{
@@ -56,6 +54,7 @@ label{
   padding: 5px;
   color: #fff;
   margin-top: 10px;
+  display : none;
 }
 
 #error{
@@ -63,7 +62,9 @@ label{
   border: 1px solid black;
   padding: 5px;
   margin-top: 10px;
-  
-  
-  
+  display : none;
+}
+
+.display{
+  display : block !important;
 }
