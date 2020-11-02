@@ -1,6 +1,6 @@
 function validation() {
     
-    document.getElementById("lastName").value;
+   /* document.getElementById("lastName").value;
     document. getElementById("FirstName").value;
     document.getElementById("courriel").value;
     document.getElementById("dateBirth").value;
@@ -8,18 +8,11 @@ function validation() {
     document.getElementById("nationality").value;
     document.getElementById("Valider").value;
     document.getElementById("error").value;  
-    document.getElementById("resultat").value;
+    document.getElementById("resultat").value;*/
    
 
-
-
-
-  /* if(lastName.value.length <5 &&  FirstName.value.length <5 && courriel.value.length <5 && !dateBirth.value && address.value.length <5 && !nationality.value ){
-        document.getElementById("error").innerHTML="La saisie des champs est obligatoires et car sup a 5";
-        }else{
-            document.getElementById("resultat").innerHTML="Bienvenue kat " ;
-        }*/
-   
+    document.getElementById("resultat").classList.remove("display");
+    document.getElementById("error").classList.remove("display");
 
     if(lastName.value.length<5  ){
         document.getElementById("error").classList.add("display");
