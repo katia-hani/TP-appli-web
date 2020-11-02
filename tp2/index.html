@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP2</title>
+        <title>Validation de formulaire en JavaScript_TP2</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <script type="text/javascript" src="formulaire.js"></script>
         <!-- Place favicon.ico in the root directory -->
 
-        <style>
+         <!--<style>
           body{
               background-color: #e9ebee;              
               font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -18,16 +19,112 @@
               margin: 0 auto;
               max-width: 800px;              
           }
-        </style>
+        </style> -->
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
+        <link rel="stylesheet" href="tp2.css">
         <!--<script src="js/main.js"></script>-->
     </head>
-    <body>        
-        <h1>tp2</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+    
+    <body> 
+        
+       <!-- <h1>tp2</h1> -->
+        <!--Add your site or application content here -->
+       <!-- <p>Hello world! This is HTML5 Boilerplate.</p>
+        <img src="../galilee.png" alt="Logo Galilee"/>-->
+
+
+        <form  id="inscription" >
+         
+            <h1>Formulaire d'inscription "Personne"</h1>
+            
+            <table>   
+            <tr>
+               <th> <label for="lastName">Nom</label> :</th>
+               <th> <input type="text" name="lastName" id="lastName"  minlength="5" maxlength="20"  class="inputAw"></th>
+               <th> <label for="FirstName">Prénom </label> :</th>
+               <th>  <input type="text" name="FirstName" id="FirstName"   minlength="5" maxlength="20"class="inputAw" ></th>
+             </tr>
+
+
+            <tr>
+                <th> <label for="courriel">Mail </label> :</th>
+                <th>  <input type="email" name="courriel" id="courriel"  minlength="5" maxlength="30" class="inputAw"  ></th>
+                <th> <label for="dateBirth">Date de naissance </label> :</th>
+                <th> <input type="date" name="dateBirth" id="dateBirth" class="inputAw"  ></th>    
+             </tr>
+
+            
+            
+                <tr>
+                    <th> <label for="address">Adresse </label> :</th>
+                    <th>  <input type="text" name="address" id="address"  minlength="5" maxlength="50"class="inputAw" ></th> 
+                    <th> <label for="nationality">Nationalité</label>: </th>
+               <th> <select id="nationality">
+                 <option value="">Autre</option>
+                  <option value="F" name="nationality">Française</option>
+                  <option value="A" name="nationality">Algérienne</option>
+                  <option value="R" name="nationality">Russe</option>
+                  <option value="G" name="nationality">Grecque</option></th>   
+               </tr>
+                
+                 <tr> 
+                   <th>
+                      
+                  <th><input type="button" name="Valider" value="Valider" id="Valider" onclick="validation()" ></th>      
+                   </tr> 
+                   
+                   </table>
+
+                   <div id="error"> </div>
+                  <div id="resultat"> </div>
+                
+        </form>
+        
+
+       <!-- <form   id="inscription" name="inscription">
+
+             <h1>Formulaire d'inscription controlé coté client</h1>
+
+             <label for="lastName">Nom</label> :
+              <input type="text" name="lastName" id="lastName"  minlength="5" maxlength="20" required>
+
+             <label for="FirstName">Prénom </label> :
+             <input type="text" name="FirstName" id="FirstName"  minlength="5" maxlength="20" >
+
+             <label for="dateBirth">Date de naissance </label> :
+             <input type="date" name="dateBirth" id="dateBirth"    >
+
+             <label for="placeOfBirth">lieu de naissance </label> :
+             <input type="text" name="placeOfBirth" id="placeOfBirth"  minlength="5" maxlength="50" >
+
+             <label for="courriel">Mail </label> :
+             <input type="email" name="courriel" id="courriel"  minlength="5" maxlength="30"  >
+
+             <label for="phoneNumber">Téléphone </label> :
+             <input type="tel" name="phoneNumber" id="phoneNumber" required >
+              
+
+             <label for="address">Adresse </label> :
+            <input type="text" name="address" id="address"  minlength="5" maxlength="50" >
+            
+            
+
+            <label for="nationality">Nationalité</label>: 
+            <select id="nationality">
+                  <option value="A" name="nationality">Algérienne</option>
+                  <option value="F" name="nationality">Française</option>
+                  <option value="R" name="nationality">Russe</option>
+                  <option value="G" name="nationality">Grecque</option>
+
+                  <input type="button" name="Valider" value="Valider" id="Valider" onclick="validation()" >
+
+                  <div id="error"> </div>
+                  <div id="resultat"> </div>
+
+        </form> -->
+
+            
+        
     </body>
 </html>
