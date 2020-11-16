@@ -1,4 +1,4 @@
-<!doctype html>
+<!--  <!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -7,10 +7,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">  -->
         <!-- Place favicon.ico in the root directory -->
 
-        <style>
+       <!--   <style>
           body{
               background-color: #e9ebee;              
               font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -18,16 +18,249 @@
               margin: 0 auto;
               max-width: 800px;              
           }
-        </style>
+        </style>   -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TP3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>tp3</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <!-- jquery pour pouvoir utiliser les composants JS de boostap (modal, tooltip...) -->
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+ integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+ crossorigin="anonymous"></script>-->
+ 
+
+<!-- CSS boostrap -->
+<link rel="stylesheet" href="TP3.css">
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+
+ <script src="js/popper.min.js"></script>
+<!---<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+ crossorigin="anonymous"></script>-->
+
+<!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
+          <script src="js/bootstrap.min.js"></script>
+
+          <script src="js/form-jquery-validation.js"></script>
+
+     </head>
+    <body class="bg-primary">        
+       <!-- <h1>Tp3_Formulaire_Avec-"bootstrap & jQuery"</h1> 
+         Add your site or application content here -->
+       <!--     <p>Hello world! This is HTML5 Boilerplate.</p>
+        <img src="../galilee.png" alt="Logo Galilee"/> -->
+
+        <div class="container   ">
+          <h1> form avec Bootsrap et jQuery</h1>
+          <form class=" py-5 mt-2 px-5 "  > 
+            
+            <label >Sexe</label>
+            <div class="form-check-inline offset-md-1  ">
+              
+              <input class="form-check-input " type="radio" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Feminin</label>
+            </div>
+
+            <div class=" form-check-inline offset-md-1">
+              <input class="form-check-input" type="radio" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Masculin</label>
+            </div>
+            
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="nom" >Nom</label>
+                      <input id="nom" class="form-control"  type="text" name=""  placeholder="Entrer votre nom">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="prenom">Prénom</label>
+                      <input id="prenom" class="form-control"  type="text" name=""   placeholder="Entrer votre prénom">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="datBirth">Date de naissance</label>
+                      <input id="datBirth" class="form-control" type="date" name="" placeholder="Entrer votre date de naissance">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="mail">Mail</label>
+                      <input id="mail" class="form-control" type="text" name="" placeholder="Entrer votre mail">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="form-group ">
+                  <div class="row">
+                    <div class="col-10">
+                      <label for="adresse">Adresse</label>
+                      <input id="adresse" class="form-control" type="text" name="" placeholder="Entrer votre adresse">
+                    </div>
+                  </div>
+              </div> 
+
+              <div class="form-group ">
+                <div class="row">
+                  <div class="col-6">
+                  <label for="nationalité"  >Nationalité</label>
+                  <select  id="nationalité" class="form-control">
+                    <option></option>
+                    <option>Autre</option>
+                    <option>Algérienne</option>
+                    <option>Française</option>
+                    <option>Russe</option>
+                    <option>Grecque</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+                
+              <button class="btn-outline-primary"  type="button"  id="valider">Valider</button>
+            </form>
+         </div> 
+         
+
+     <!-- identifiant la modal-->
+
+        <!-- The Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+  <!-- Modal Header -->
+              <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+ <!-- Modal body -->
+              <div class="modal-body">
+                <p>Corps de la modal à modifier après validation du formulaire</p>
+              </div>
+
+  <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+            
+            <!-- 2em methode pour créer un formulaire et modal-->
+            
+             <!-- <label>Sexe </label>
+            <div class="form-check-inline offset-md-1  ">  
+              <input class="form-check-input" type="radio" id="inlineCheck1" value="option1">
+              <label class="form-check-label" for="inlineCheck1">Feminin</label>
+            </div>
+
+            <div class="form-check-inline offset-md-1">
+              <input class="form-check-input" type="radio" id="inlineChek2" value="option2">
+              <label class="form-check-label" for="inlineChek2">Masculin</label>
+            </div>
+
+                <div class="form-group row align-items-center ">
+                    <label for="lastName" class="col-sm-3 col-form-label ">Nom</label> 
+                    <div class="col-sm-1"  >
+                      <input type="text" class="lastName" id="lastName" placeholder="Nom">
+                    </div>
+                </div>
+
+                <div class="form-group row align-items-center">
+                    <label for="firstName" class="col-sm-3 col-form-label">Prénom </label> 
+                    <div class="col-sm-1">
+                      <input type="text" class="firstName" id="firstName" placeholder="Prénom">
+                    </div>
+                </div>
+
+                <div class="form-group row align-items-center">
+                    <label for="datepicker"  class="col-sm-3 col-form-label" >Date de naissance </label> 
+                    <div class="col-sm-1">
+                      <input type="text" name="dateBirth" id="datepicker" placeholder="Date de naissance">
+                    </div>
+                </div>
+
+               <div class="form-group row align-items-center">
+                    <label for="courriel" class="col-sm-3 col-form-label">Mail </label> 
+                    <div class="col-sm-1">
+                      <input type="email" name="courriel" id="courriel" placeholder="Mail">
+                    </div>
+                </div>
+
+                <div class="form-group row align-items-center">
+                    <label for="address" class="col-sm-3 col-form-label ">Adresse </label> 
+                    <div class="col-sm-1">
+                      <input type="text" name="address" id="address" placeholder="Adresse">
+                    </div>
+                </div>
+
+                <div class="form-group row align-items-center  ">
+                  <label for="nationalité"  class="col-sm-3 col-form-label " >Nationalité</label>
+                  <select class="col-sm-2"  id="nationalité">
+                    <option></option>
+                    <option>Autre</option>
+                    <option>Algérienne</option>
+                    <option>Française</option>
+                    <option>Russe</option>
+                    <option>Grecque</option>
+                  </select>
+                </div>
+                
+
+                <div class="form-group row">
+                  <label  class="col-sm-3 col-form-label "> </label> 
+                  <div class="col-sm-1">
+                   <button class="btn-outline-primary"  type="button"  id="valider">Valider</button>
+                  </div>
+              </div>-->
+
+              
+
+       <!-- identifiant la modal-->
+
+        <!-- The Modal -->
+                 <!-- <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content"> -->
+
+        <!-- Modal Header -->
+                    <!-- <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div> -->
+
+       <!-- Modal body -->
+                    <!-- <div class="modal-body">
+                      <p>Corps de la modal à modifier après validation du formulaire</p>
+                    </div> -->
+
+        <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">OK</button>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>    -->
+               
+                    
+              
+                   
+        
+         
+         
     </body>
-</html>
+</html>    
