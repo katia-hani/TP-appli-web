@@ -12,7 +12,7 @@ $( document ).ready(function() {
    
 });
 
-$( document ).ready(function() {
+
 
 
 
@@ -56,13 +56,38 @@ $( document ).ready(function() {
                      
     
 
-});
 
 
 
-$("form").on("submit",function(event){
+
+$("#valider").on("click",function(event){
   event.preventDefault();
-  
+  console.log( "click" );
+
+
+ if($("#nom").val().length<5 || $("#nom").val().length>20 ){
+    $(".modal-body").text('veuillez saisir votre nom'); 
+    $('#myModal').modal("show"); 
+}
+else if($("#prenom").val().length<5 || $("#prenom").val().length>20 ){
+    $(".modal-body").html('veuillez saisir votre prenom'); 
+    $('#myModal').modal("show"); 
+}
+else if($( "#datBirth" ).val()=="" ){
+    $(".modal-body").text('veuillez saisir votre date de naissance'); 
+    $('#myModal').modal("show"); 
+}
+else if($("#mail").val().length<10 || $("#mail").val().length>25 ){
+    $(".modal-body").text('veuillez saisir votre mail'); 
+    $('#myModal').modal("show"); 
+}
+else if($("#adresse").val().length<10 || $("#adresse").val().length>40 ){
+    $(".modal-body").text('veuillez saisir votre adresse'); 
+    $('#myModal').modal("show"); 
+}
+
+
+else{
   contactStore.add (
     $("#nom").val(),
     $("#prenom").val(),
@@ -70,32 +95,40 @@ $("form").on("submit",function(event){
     $("#mail").val(),
     $("#adresse").val()
   );
-
- var contactList = contactStore.getList();
- $("table tbody").html("");
-
-  for( var contact of contactList ){
+  
+  var contactList = contactStore.getList();
+  $("table tbody").html("");
+  
+  for( var contacts of contactList ){
     
-    $("#tabl tbody").html ( 
-
+    $("#tabl tbody").append ( 
+  
     ` <tr> 
       
-     <td> ${contact.nom}</td>
-     <td> ${contact.prenom}</td>
-    <td> ${contact.datBirth}</td>
-     <td> <a href="mailto:${contact.mail}">${contact.mail}</a></td>
-     <td> <a href="https://maps.google.com/?q=${contact.adresse}">${contact.adresse}</a></td>
-
+     <td> ${contacts.nom}</td>
+     <td> ${contacts.prenom}</td>
+    <td> ${contacts.datBirth}</td>
+     <td> <a href="mailto:${contacts.mail}">${contacts.mail}</a></td>
+     <td> <a href="https://maps.google.com/?q=${contacts.adresse}">${contacts.adresse}</a></td>
+  
       
         
       
       
      </tr>`
-
+  
          
      );
-
+  
   }
+}
+
+
+
+
+
+  
+
 
 
 });
