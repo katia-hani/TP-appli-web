@@ -1,0 +1,49 @@
+#caraNom,
+#caraPrenom,
+#caraMail,
+#caraAdd
+
+{
+color: gold;
+
+}
+h2{
+    
+
+    text-align: center ;
+    
+}
+thead {
+    border-collapse: collapse;
+    margin:auto;
+    color: blue;
+  }
+
+#tabl{
+    
+        width: 80%;    
+        
+        margin-left: 150px;
+      }
+
+      #tabl td {
+        background-color: darkviolet;
+        color: white;
+      }
+      
+    
+      form {
+        border: 2px solid #454545;
+        border-radius: 30px;
+        background-color:  darkviolet;
+        
+      }
+      #valider{
+        color: black; 
+        background-color: gold;
+        border-color: gold;
+        
+      }
+     #tabl a{
+        color: white;
+      }
