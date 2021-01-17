@@ -58,7 +58,7 @@ window.onload = function () {
             }
 
                 console.log('formCityName:',this.formCityName);
-                // A compléter dans la suite du TP  
+                  
             },
 
             isCityExist: function (_cityName){
@@ -72,20 +72,18 @@ window.onload = function () {
                 }
             },
             
-              remove: function (_city) {      
-                // A compléter dans la suite du TP  
+              remove: function (_city) {        
                 // on utilise 'filter' pour retourne une liste avec tous les items ayant un nom différent de _city.name
               this.cityList = this.cityList.filter(item => item.name != _city.name);        
                }, 
 
-            meteo: function (_city) {  
-                // A compléter dans la suite du TP 
+            meteo: function (_city) {   
 
 
                 this.cityWeatherLoading = true;
 
     // appel AJAX avec fetch
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=VOTRE_APIKEY')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+_city.name+'&units=metric&lang=fr&apikey=834134bfb714e36028d6164af1ad3ab8')
         .then(function(response) {
             return response.json();
         })
@@ -99,6 +97,7 @@ window.onload = function () {
                 // on met la réponse du webservice dans la variable cityWeather
                 app.cityWeather = json;
                 app.message = null;
+               
             }else{
                 app.cityWeather = null;
                 app.message = `Météo introuvable pour ${_city.name} (${json.message})`;
